@@ -70,9 +70,12 @@ class RecentChats extends StatelessWidget {
                           ),
                           child: Container(
                             margin: const EdgeInsets.only(
-                                top: 5.0, bottom: 5.0, right: 20.0),
+                              top: 5.0,
+                              bottom: 5.0,
+                              right: 20.0,
+                            ),
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 10.0),
+                                horizontal: 20.0, vertical: 15.0),
                             decoration: BoxDecoration(
                               color:
                                   contact.senderId != userProvider.getUser!.uid

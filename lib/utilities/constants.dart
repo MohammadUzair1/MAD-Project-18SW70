@@ -8,7 +8,6 @@ const String CONTACTS_COLLECTION = 'contacts';
 
 // Normal Strings
 const String MESSAGE_TYPE_TEXT = 'text';
-const String MESSAGE_TYPE_VOICE = 'voice';
 
 // Styles
 final kTitleStyle = TextStyle(

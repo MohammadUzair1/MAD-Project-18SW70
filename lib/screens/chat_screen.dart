@@ -31,9 +31,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
   DateFormat dateFormat = DateFormat('dd-MM-yy – h:mm a');
 
-
-
-
   Color _userStateColor = Colors.red;
 
   @override
@@ -74,7 +71,6 @@ class _ChatScreenState extends State<ChatScreen> {
   void _getUserPermissions() async {
     await [
       Permission.storage,
-      Permission.microphone,
     ].request();
   }
 
@@ -107,7 +103,6 @@ class _ChatScreenState extends State<ChatScreen> {
         .catchError((error) {});
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -225,11 +220,10 @@ class _ChatScreenState extends State<ChatScreen> {
                 style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
               ),
               SizedBox(height: 4.0),
-               Text(
-                      message.message!,
-                      style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
-                    ),
-                  
+              Text(
+                message.message!,
+                style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
+              ),
             ],
           ),
         ),
@@ -269,11 +263,11 @@ class _ChatScreenState extends State<ChatScreen> {
               style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
             ),
             SizedBox(height: 4.0),
-           Text(
-                    message.message!,
-                    style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
-                  ),
-                          ],
+            Text(
+              message.message!,
+              style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
+            ),
+          ],
         ),
       ),
     );
@@ -290,33 +284,26 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ),
       ),
-      child:Row(
-              children: [
-                IconButton(
-                  icon: Icon(Icons.image),
-                  color: Color(0xff3594DD),
-                  onPressed: () {},
-                ),
-                Expanded(
-                  child: TextField(
-                    controller: _textEditingController,
-                    style: TextStyle(fontSize: 16.0, color: Colors.black),
-                    decoration: InputDecoration(
-                      hintText: 'Send a message...',
-                      border: InputBorder.none,
-                      hintStyle:
-                          TextStyle(fontSize: 16.0, color: Colors.black54),
-                    ),
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.send),
-                  color: Color(0xff3594DD),
-                  onPressed: _sendMessage,
-                ),
-                
-              ],
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _textEditingController,
+              style: TextStyle(fontSize: 16.0, color: Colors.black),
+              decoration: InputDecoration(
+                hintText: 'Send a message...',
+                border: InputBorder.none,
+                hintStyle: TextStyle(fontSize: 16.0, color: Colors.black54),
+              ),
             ),
+          ),
+          IconButton(
+            icon: Icon(Icons.send),
+            color: Color(0xff3594DD),
+            onPressed: _sendMessage,
+          ),
+        ],
+      ),
     );
   }
 }

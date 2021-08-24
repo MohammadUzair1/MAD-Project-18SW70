@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 
 import 'loading_widgets.dart';
 
-class FavoriteContacts extends StatelessWidget {
+class Contacts extends StatelessWidget {
   final FirebaseRepository _firebaseRepository = FirebaseRepository();
   UserProvider? _userProvider;
 

@@ -16,7 +16,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
 
-  void _moveToNext() {
+  void _moveToLoginScreen() {
     Get.offAll(LoginScreen());
   }
 
@@ -94,7 +94,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     : Container(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: _moveToNext,
+                          onPressed: _moveToLoginScreen,
                           child: Text(
                             'Skip',
                             style: TextStyle(
@@ -152,7 +152,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
       bottomSheet: _currentPage == _numOfPages - 1
           ? GestureDetector(
-              onTap: _moveToNext,
+              onTap: _moveToLoginScreen,
               child: Container(
                 height: 60.0,
                 alignment: Alignment.center,

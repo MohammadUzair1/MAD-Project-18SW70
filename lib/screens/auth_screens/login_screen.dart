@@ -192,7 +192,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               textInputAction: TextInputAction.done,
                             ),
-                            _buildForgetPasswordBtn(),
+                            SizedBox(
+                              height: 10,
+                            ),
                             _buildRememberMeCheckBox(),
                             _loginLoadingProvider!.getViewState ==
                                     ViewState.LOADING
@@ -219,19 +221,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildForgetPasswordBtn() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: TextButton(
-        onPressed: () => print('Forgot Button Pressed'),
-        child: Text(
-          'Forgot Password',
-          style: kLabelStyle,
         ),
       ),
     );

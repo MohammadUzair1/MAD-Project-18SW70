@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               ),
               child: Column(
                 children: [
-                  FavoriteContacts(),
+                  Contacts(),
                   RecentChats(),
                 ],
               ),

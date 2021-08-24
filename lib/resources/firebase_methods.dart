@@ -99,9 +99,7 @@ class FirebaseMethods {
       Message message, UserModel sender, UserModel receiver) async {
     message.messageId = DateTime.now().millisecondsSinceEpoch.toString();
     var map;
-    if (message.type == MESSAGE_TYPE_TEXT)
-      map = message.toMap();
-    else if (message.type == MESSAGE_TYPE_VOICE) map = message.toVoiceMap();
+    if (message.type == MESSAGE_TYPE_TEXT) map = message.toMap();
 
     await _messageCollection
         .doc(message.senderId)
